@@ -15,10 +15,10 @@ export default function App() {
   const location = useLocation();
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#F7F7F5] font-sans text-zinc-900">
+    <div className="flex flex-col min-h-screen bg-slate-50 font-sans text-slate-900">
       <Navbar />
-      <main className="flex-grow">
-        <Routes location={location}>
+      <main className="flex-grow pt-16">
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/tours/*" element={<Tours />} />

@@ -39,37 +39,39 @@ export default function FAQ() {
   ];
 
   return (
-    <div className="w-full bg-[#FAF9F6] min-h-screen pt-24 pb-32">
-      <div className="text-center pt-16 flex flex-col items-center mb-20 px-6">
-        <span className="text-zinc-400 font-light text-xs tracking-widest uppercase mb-6">(Travel Guide)</span>
-        <h1 className="text-5xl md:text-7xl font-serif text-zinc-900 mb-6 tracking-tight">Travel FAQ</h1>
-        <p className="text-zinc-500 font-light text-lg max-w-2xl mx-auto leading-relaxed">
-          Everything you need to know about traveling to Sri Lanka with UCT Travels.
-        </p>
-      </div>
+    <div className="w-full bg-slate-50 min-h-screen pt-16">
+      <section className="bg-slate-900 py-24 lg:py-32 text-white border-b-8 border-orange-600">
+        <div className="max-w-4xl mx-auto px-8 lg:px-12 text-center">
+          <span className="inline-block px-3 py-1 bg-slate-800 text-[10px] font-bold text-slate-300 uppercase tracking-widest w-fit mb-6">Travel Guide</span>
+          <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-6 leading-tight">Travel <span className="text-orange-600">FAQ</span></h1>
+          <p className="text-lg font-medium text-slate-400 max-w-2xl mx-auto">
+            Everything you need to know about traveling to Sri Lanka with UCT Travels.
+          </p>
+        </div>
+      </section>
 
-      <section className="px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white p-8 lg:p-16 rounded-[2.5rem] shadow-[0_4px_20px_-12px_rgba(0,0,0,0.05)] border border-zinc-100">
-            <Accordion type="single" collapsible className="w-full">
+      <section className="py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white p-12 lg:p-16 border-t-8 border-t-slate-900 border border-slate-200">
+            <Accordion type="single" collapsible className="w-full space-y-4">
               {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="border-b border-zinc-100 last:border-0 py-2">
-                  <AccordionTrigger className="text-left font-serif text-xl tracking-tight text-zinc-900 hover:text-zinc-500 hover:no-underline py-6">
+                <AccordionItem key={index} value={`item-${index}`} className="border border-slate-200 px-6 data-[state=open]:border-orange-600 transition-colors">
+                  <AccordionTrigger className="text-left font-black tracking-tighter uppercase text-lg text-slate-900 hover:text-orange-600 hover:no-underline py-6">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-zinc-500 font-light leading-relaxed pb-8 text-base">
+                  <AccordionContent className="text-slate-500 font-medium leading-relaxed pb-6">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
             
-            <div className="mt-16 p-10 bg-[#FAF9F6] rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="mt-16 p-12 bg-slate-100 flex flex-col md:flex-row items-center border border-slate-200 justify-between gap-6">
                <div className="text-center md:text-left">
-                 <h3 className="font-serif tracking-tight text-zinc-900 text-2xl mb-3">Have a different question?</h3>
-                 <p className="text-base font-light text-zinc-500 max-w-md">Our travel experts in Australia and Sri Lanka are ready to assist you.</p>
+                 <h3 className="font-black tracking-tighter uppercase text-slate-900 text-xl mb-2">Have a different question?</h3>
+                 <p className="text-sm font-medium text-slate-500">Our travel experts in Australia and Sri Lanka are ready to assist you.</p>
                </div>
-               <Link to="/contact" className="inline-block px-8 py-4 bg-zinc-900 text-white text-sm font-medium hover:bg-zinc-800 transition-colors shrink-0 rounded-full shadow-sm">
+               <Link to="/contact" className="inline-block px-8 py-4 bg-slate-900 text-white text-xs uppercase tracking-widest font-bold hover:bg-orange-600 transition-colors shrink-0">
                  Contact Us
                </Link>
             </div>

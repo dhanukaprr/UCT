@@ -1,152 +1,162 @@
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MapPin, Compass, Shield, HeartHandshake } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
   const tourCategories = [
-    { title: "Labuan Bajo, Indonesia", path: "/tours/beach", image: "https://images.unsplash.com/photo-1544483785-3ad055d2dc60?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", description: "A bustling fishing town located on the western tip of Flores." },
-    { title: "Borobudur Temple", path: "/tours/cultural", image: "https://images.unsplash.com/photo-1588636746977-f273614214f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", description: "A magnificent Mahayana Buddhist temple located in Central Java." },
-    { title: "Yala National Park", path: "/tours/wildlife", image: "https://images.unsplash.com/photo-1544605650-725ff7eed8c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", description: "Experience thrilling wildlife safaris in the heart of nature." },
-    { title: "Ella Hill Country", path: "/tours/hill-country", image: "https://images.unsplash.com/photo-1578330769395-5fa4ddc340b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", description: "Misty mountains and breathtaking views over valleys." }
+    { title: "Beach Tours", path: "/tours/beach", image: "https://images.unsplash.com/photo-1544483785-3ad055d2dc60?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+    { title: "Wildlife Safaris", path: "/tours/wildlife", image: "https://images.unsplash.com/photo-1544605650-725ff7eed8c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+    { title: "Cultural Heritage", path: "/tours/cultural", image: "https://images.unsplash.com/photo-1588636746977-f273614214f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+    { title: "Hill Country", path: "/tours/hill-country", image: "https://images.unsplash.com/photo-1578330769395-5fa4ddc340b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }
   ];
 
   return (
-    <div className="w-full bg-[#F7F7F5]">
+    <div className="w-full">
       {/* Hero Section */}
-      <section className="relative px-4 sm:px-6 lg:px-8 pb-12 pt-0 md:pt-4">
-        <div className="w-full max-w-[95%] mx-auto relative min-h-[85vh] rounded-[2.5rem] overflow-hidden flex items-center justify-center shadow-sm">
-          <div className="absolute inset-0 bg-black/20 z-10" />
-          <img 
-            src="https://images.unsplash.com/photo-1585807519159-4ac97e937d25?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80" 
+      <section className="relative flex flex-col lg:flex-row min-h-[85vh] border-b border-slate-200">
+        <div className="w-full lg:w-7/12 p-12 pt-24 md:pt-32 flex flex-col justify-center gap-6 border-r border-slate-200 bg-white order-2 lg:order-1 relative z-10">
+          <div className="inline-block px-3 py-1 bg-slate-200 text-[10px] font-bold text-slate-800 uppercase tracking-widest w-fit">
+            Tailored Luxury & Adventure
+          </div>
+          <h1 className="text-6xl md:text-8xl font-black tracking-tighter uppercase text-slate-900 leading-[0.95]">
+            DISCOVER<br/>
+            <span className="text-orange-600">SRI LANKA</span><br/>
+            WITH US.
+          </h1>
+          <p className="text-slate-500 text-lg max-w-lg leading-relaxed font-medium">
+            Bridging cultures with authentic travel experiences from Australia to the Pearl of the Indian Ocean.
+          </p>
+          <div className="flex gap-4 mt-4 mb-4">
+            <div className="flex flex-col border-l-4 border-orange-600 pl-4">
+              <span className="text-2xl font-black text-slate-900">10+</span>
+              <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Years Exp.</span>
+            </div>
+            <div className="flex flex-col border-l-4 border-slate-900 pl-4">
+              <span className="text-2xl font-black text-slate-900">24/7</span>
+              <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Local Support</span>
+            </div>
+          </div>
+          <div>
+            <Link to="/tours" className="inline-flex items-center space-x-2 bg-slate-900 text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-orange-600 transition-colors w-fit">
+              <span>View Tour Packages</span>
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+        
+        <div className="w-full lg:w-5/12 order-1 lg:order-2 m-0 p-0 relative min-h-[50vh] lg:min-h-full">
+           <img 
+            src="https://images.unsplash.com/photo-1585807519159-4ac97e937d25?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
             alt="Sri Lanka landscapes" 
-            className="absolute inset-0 w-full h-full object-cover"
+            className="w-full h-full object-cover absolute inset-0"
           />
+        </div>
+      </section>
 
-          <div className="relative z-20 text-center text-white px-6 mt-16 max-w-4xl mx-auto flex flex-col items-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif leading-[1.05] tracking-tight text-white mb-6"
-            >
-              Discover Sri Lanka <br/>
-              with Authentic Heritage
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg md:text-xl text-white/90 max-w-2xl font-light mb-10 leading-relaxed"
-            >
-               Bridging cultures with authentic travel experiences from Australia to the Pearl of the Indian Ocean. Every location offers a glimpse into traditions that shape our world.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <Link to="/tours" className="inline-block bg-white text-zinc-900 px-8 py-3 rounded-full text-sm font-medium hover:bg-zinc-100 transition-colors shadow-sm">
-                Book a Tour Now
-              </Link>
-            </motion.div>
+      {/* Intro Section */}
+      <section className="bg-slate-50 border-b border-slate-200">
+        <div className="flex flex-col lg:flex-row">
+          <div className="w-full lg:w-1/2 p-12 lg:p-24 border-b lg:border-b-0 lg:border-r border-slate-200 flex flex-col justify-center">
+             <div className="inline-block px-3 py-1 bg-slate-200 text-[10px] font-bold text-slate-800 uppercase tracking-widest w-fit mb-6">Welcome to UCT Travels</div>
+             <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase text-slate-900 leading-tight mb-8">
+               Your bridge to authentic <span className="text-orange-600">Sri Lankan</span> experiences.
+             </h2>
+             <p className="text-slate-500 leading-relaxed font-medium text-lg mb-6">
+               Established in 2015, Universal Ceylon Travels (Pvt) Ltd is a premier travel agency specializing in connecting Australian travelers with the breathtaking beauty of Sri Lanka.
+             </p>
+             <p className="text-slate-500 leading-relaxed font-medium mb-8">
+               Whether you are seeking luxury beach retreats, thrilling wildlife safaris, culturally immersive journeys, or a bespoke private tour, our team in Melbourne and Colombo ensures a seamless, unforgettable holiday.
+             </p>
+             <Link to="/about" className="inline-block border-b border-slate-900 text-slate-900 font-bold uppercase tracking-widest text-xs py-1 hover:text-orange-600 hover:border-orange-600 w-fit transition-colors">
+                Read our full story
+             </Link>
+          </div>
+          <div className="w-full lg:w-1/2 bg-slate-100 p-8 lg:p-12 grid grid-cols-2 grid-rows-2 gap-4">
+             <div className="bg-slate-900 p-8 flex flex-col justify-between text-white border-t-4 border-orange-600">
+               <span className="text-[10px] font-bold uppercase tracking-widest opacity-50">Local Info</span>
+               <h3 className="text-xl font-black uppercase tracking-tighter">Colombo<br/>Office</h3>
+             </div>
+             <div className="bg-white p-8 border border-slate-200 flex flex-col justify-between">
+               <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Global Reach</span>
+               <h3 className="text-xl font-black uppercase tracking-tighter text-slate-900">Chadstone<br/>HQ</h3>
+             </div>
+             <div className="bg-white p-8 border border-slate-200 flex flex-col justify-between">
+               <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Scale</span>
+               <h3 className="text-xl font-black uppercase tracking-tighter text-slate-900">Custom<br/>Tours</h3>
+             </div>
+             <div className="bg-orange-600 p-8 flex flex-col justify-between text-white border-t-4 border-slate-900">
+               <span className="text-[10px] font-bold uppercase tracking-widest opacity-70">Support</span>
+               <h3 className="text-xl font-black uppercase tracking-tighter">24/7<br/>Assistance</h3>
+             </div>
           </div>
         </div>
       </section>
 
-      {/* Intro Quote Section */}
-      <section className="py-24 flex justify-center text-center px-6">
-        <div className="max-w-4xl mx-auto flex flex-col items-center relative">
-            <span className="text-zinc-400 text-xs tracking-wider uppercase mb-8 ml-[-100px] md:absolute md:left-[-120px] md:top-4">(About Us)</span>
-            <h2 className="text-3xl md:text-[2.75rem] font-serif text-zinc-900 leading-[1.4] tracking-tight">
-               We believe that the most profound journeys are those that lead us to destinations 
-               <img src="https://images.unsplash.com/photo-1544483785-3ad055d2dc60?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Ocean" className="inline-block w-14 h-10 object-cover rounded-xl align-middle mx-3 shadow-sm" /> 
-               where history lives and breathes—places of rich heritage that have shaped civilizations, inspired generations, and stand as a testament to 
-               <img src="https://images.unsplash.com/photo-1588636746977-f273614214f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Ruins" className="inline-block w-14 h-10 object-cover rounded-xl align-middle mx-3 shadow-sm" /> 
-               human ingenuity and resilience.
-            </h2>
-        </div>
-      </section>
-
-      {/* Discover Events/Tours */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col items-center text-center mb-16">
-          <span className="text-zinc-400 text-xs tracking-wider uppercase mb-4">(Tours)</span>
-          <h2 className="text-4xl md:text-5xl font-serif text-zinc-900 mb-6 tracking-tight">Discover Curated Travel Experiences</h2>
-          <p className="text-zinc-600 max-w-2xl font-light text-lg">
-            Explore a variety of exciting tours that are on the horizon, offering unique experiences and opportunities for everyone to enjoy!
-          </p>
+      {/* Tour Categories */}
+      <section className="bg-white border-b border-slate-200">
+        <div className="p-12 lg:p-24 border-b border-slate-200 text-center flex flex-col items-center">
+          <div className="inline-block px-3 py-1 bg-slate-200 text-[10px] font-bold text-slate-800 uppercase tracking-widest w-fit mb-6">Explore the Island</div>
+          <h2 className="text-5xl font-black tracking-tighter uppercase text-slate-900 mb-6">Curated Travel Experiences</h2>
+          <p className="text-slate-500 font-medium text-lg leading-relaxed max-w-2xl">From the golden coasts to the misty central highlands, discover our most popular travel packages designed for every type of explorer.</p>
         </div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {tourCategories.map((category, idx) => (
-            <Link to={category.path} key={category.title} className="group flex flex-col bg-white rounded-[2rem] p-4 shadow-sm hover:shadow-xl transition-all duration-500">
-              <div className="relative h-[300px] w-full rounded-[1.5rem] overflow-hidden mb-6">
-                <img 
-                  src={category.image} 
-                  alt={category.title} 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="px-4 pb-4">
-                <h3 className="text-2xl font-serif text-zinc-900 mb-3">{category.title}</h3>
-                <p className="text-zinc-500 font-light text-sm mb-6 line-clamp-2">
-                  {category.description}
-                </p>
-                <div className="flex items-center justify-between border-t border-zinc-100 pt-4">
-                  <span className="text-sm font-medium text-zinc-900">Booking Now</span>
-                  <ArrowRight size={18} className="text-zinc-600 transition-transform group-hover:translate-x-1" />
+            <Link to={category.path} key={category.title} className="group relative min-h-[400px] border-r border-slate-200 block overflow-hidden">
+              <div className="absolute inset-0 z-10 bg-slate-900/60 group-hover:bg-slate-900/80 transition-colors"></div>
+              <img 
+                src={category.image} 
+                alt={category.title} 
+                className="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 p-8 flex flex-col justify-between z-20">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-white opacity-80 border-l border-white pl-2">Section 0{idx + 1}</span>
+                <div>
+                  <h3 className="text-2xl font-black tracking-tighter uppercase text-white mb-6 line-clamp-2">{category.title}</h3>
+                  <div className="w-10 h-10 border border-white/40 flex items-center justify-center text-white group-hover:bg-orange-600 group-hover:border-orange-600 transition-all">
+                    <ArrowRight size={18} />
+                  </div>
                 </div>
               </div>
             </Link>
           ))}
         </div>
-      </section>
-
-      {/* Feature / Testimonial Bar */}
-      <section className="py-32 px-4 flex justify-center text-center bg-white mt-12 rounded-t-[3rem] shadow-sm">
-        <div className="max-w-4xl mx-auto flex flex-col items-center">
-            <div className="flex items-center justify-center gap-2 mb-8">
-               <div className="w-12 h-12 bg-zinc-100 rounded-full flex items-center justify-center font-serif text-3xl font-bold text-zinc-900 leading-none pt-2 shadow-sm">“</div>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-serif text-zinc-900 leading-[1.3] mb-8">
-               "Exploring the beauty of Sri Lanka was so much more memorable. Their comprehensive team, from hidden gems to practical tips, is a game-changer. Highly recommended for any adventurer!"
-            </h2>
-            <div className="flex flex-col items-center gap-2">
-              <div className="flex text-amber-400 text-sm">★★★★★ <span className="text-zinc-900 ml-2 font-medium">5.0</span></div>
-              <span className="text-zinc-500 text-sm font-light">Sarah Jenkins, Australia</span>
-            </div>
+        
+        <div className="border-t border-slate-200 p-6 flex justify-center bg-slate-50">
+          <Link to="/tours" className="inline-flex items-center space-x-2 text-slate-900 font-bold uppercase tracking-widest text-xs hover:text-orange-600 transition-colors">
+            <span>View all tour categories</span>
+            <ArrowRight size={16} />
+          </Link>
         </div>
       </section>
 
+      {/* Feature Bar */}
+      <footer className="bg-white border-b border-slate-200 grid grid-cols-1 md:grid-cols-3">
+        <div className="border-b md:border-b-0 md:border-r border-slate-200 p-8 lg:p-12 flex flex-col justify-center gap-2">
+          <span className="text-[10px] font-bold text-orange-600 uppercase tracking-widest">Local Expertise</span>
+          <p className="text-sm text-slate-600 font-medium max-w-sm">Offices in Australia and Sri Lanka mean you get local support at every step.</p>
+        </div>
+        <div className="border-b md:border-b-0 md:border-r border-slate-200 p-8 lg:p-12 flex flex-col justify-center gap-2">
+          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Tailored Itineraries</span>
+          <p className="text-sm text-slate-600 font-medium max-w-sm">Bespoke packages catering to every travel style, fully customizable.</p>
+        </div>
+        <div className="p-8 lg:p-12 flex flex-col justify-center gap-2 bg-slate-50">
+          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Seamless Experience</span>
+          <p className="text-sm text-slate-600 font-medium max-w-sm">We handle hotels, transfers, and logistics so you don't have to.</p>
+        </div>
+      </footer>
+
       {/* CTA Section */}
-      <section className="py-24 px-4 bg-white pb-32">
-        <div className="max-w-6xl mx-auto relative h-[500px] rounded-[3rem] overflow-hidden flex flex-col items-center justify-center text-center px-6 shadow-xl">
-          <div className="absolute inset-0 bg-black/30 z-10" />
-          <img 
-            src="https://images.unsplash.com/photo-1544483785-3ad055d2dc60?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-            alt="Sri Lanka Coast" 
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="relative z-20 w-full max-w-2xl">
-            <span className="text-white/80 text-sm tracking-wider uppercase mb-4 block font-light">(Call to Action)</span>
-            <h2 className="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight">Prepared to Discover the Real Charm of Sri Lanka?</h2>
-            <p className="text-white/90 font-light mb-10 max-w-lg mx-auto">
-              Discover stunning destinations rich in history and culture. Each site offers a unique view into the traditions that shape our world.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="w-full bg-white/10 backdrop-blur-md border border-white/30 text-white placeholder:text-white/60 rounded-full px-6 py-4 focus:outline-none focus:bg-white/20 transition-all font-light"
-              />
-              <Link to="/contact" className="absolute right-2 top-2 bottom-2 bg-white text-zinc-900 px-6 rounded-full flex items-center justify-center text-sm font-medium hover:bg-zinc-100 transition-colors">
-                Enquire
-              </Link>
-            </div>
-          </div>
+      <section className="bg-slate-900 text-white min-h-[50vh] flex flex-col justify-center border-t-4 border-orange-600 border-b-[16px] border-b-slate-900">
+        <div className="max-w-4xl mx-auto px-8 lg:px-12 py-24 text-center">
+          <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase mb-6 leading-none">Ready to plan your <br/><span className="text-orange-600">Sri Lankan</span> getaway?</h2>
+          <p className="text-lg text-slate-400 font-medium mb-10 max-w-2xl mx-auto">Get in touch with our travel experts to get a free quote, early bird specials for 2026, or to customize your perfect itinerary.</p>
+          <Link to="/contact" className="inline-flex items-center space-x-2 bg-white text-slate-900 px-10 py-5 text-sm font-bold uppercase tracking-widest hover:bg-orange-600 hover:text-white transition-colors">
+            <span>Enquire Now</span>
+            <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
     </div>
   );
 }
-
